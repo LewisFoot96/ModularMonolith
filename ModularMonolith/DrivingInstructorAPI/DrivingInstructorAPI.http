@@ -1,0 +1,6 @@
+@DrivingInstructorAPI_HostAddress = http://localhost:5032
+
+GET {{DrivingInstructorAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
