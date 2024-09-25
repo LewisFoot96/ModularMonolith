@@ -5,3 +5,4 @@ A module has a bounded context, a boundary within a domain
 Domain driven design in mind 
 Can have differnt architecture for different modules 
 Module is responsible for its own data
+No querying between database schemas
