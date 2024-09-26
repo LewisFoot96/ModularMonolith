@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace DrivingInstructorAPI.src.Modules.Lesson.Domain
+﻿namespace DrivingInstructorAPI.src.Modules.LessonModule.Domain
 {
     public sealed class Lesson
     {

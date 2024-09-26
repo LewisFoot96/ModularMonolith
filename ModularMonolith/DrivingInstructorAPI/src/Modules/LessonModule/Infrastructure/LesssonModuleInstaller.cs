@@ -1,4 +1,4 @@
-﻿namespace DrivingInstructorAPI.src.Modules.Lesson.Infrastructure
+﻿namespace DrivingInstructorAPI.src.Modules.LessonModule.Infrastructure
 {
     public class LesssonModuleInstaller
     {
