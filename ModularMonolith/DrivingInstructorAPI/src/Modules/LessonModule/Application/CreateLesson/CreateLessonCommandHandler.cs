@@ -1,4 +1,5 @@
 ﻿using DrivingInstructorAPI.src.Modules.LessonModule.Domain;
+using DrivingInstructorAPI.src.Modules.LessonModule.Domain.Events;
 using MediatR;
 
 namespace DrivingInstructorAPI.src.Modules.LessonModule.Application.CreateLesson
@@ -10,7 +11,9 @@ namespace DrivingInstructorAPI.src.Modules.LessonModule.Application.CreateLesson
             //Would likly have some async processing in the handler. 
             //Do something with the request
 
-            var lesson = new Lesson();
+            Lesson.Create(request.LessonName);
+
+            RaiseDomainEvent(new LessonCreatedDomainEvent("Lewis"));
             //lesson
 
             //var newLesson = lesson.Create(request.LessonName);

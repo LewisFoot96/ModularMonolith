@@ -1,4 +1,5 @@
 using DrivingInstructorAPI.src.Modules.LessonModule.Endpoints;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,21 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(LessonEndpoints).Assembly));
+
+builder.Services.AddMassTransit(x =>
+{
+    x.SetKebabCaseEndpointNameFormatter();
+
+    x.AddConsumers(typeof(LessonEndpoints).Assembly);
+
+
+    x.UsingInMemory((context, config) =>
+    {
+        config.ConfigureEndpoints(context);
+
+    });
+
+});
 
 var app = builder.Build();
 
